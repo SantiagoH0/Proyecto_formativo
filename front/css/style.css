@@ -1,0 +1,85 @@
+.elegant {
+    margin: 0 auto;
+    /* Centra la tabla horizontalmente */
+    border-collapse: collapse;
+    /* Combina los bordes de las celdas */
+    width: 80%;
+    /* Anchura de la tabla, puedes ajustarlo según tus necesidades */
+}
+
+.elegant caption {
+    font-size: 1.5em;
+    /* Tamaño de fuente del título */
+    font-weight: bold;
+    /* Negrita para el título */
+    margin-bottom: 10px;
+    /* Margen inferior del título */
+    text-align: center;
+    /* Centra el título */
+}
+
+.elegant th,
+.elegant td {
+    padding: 10px;
+    /* Añade espacio interno a las celdas */
+    text-align: center;
+    /* Centra el contenido de las celdas */
+    border: 1px solid #ddd;
+    /* Añade bordes a las celdas */
+}
+
+.elegant th {
+    background-color: #f2f2f2;
+    /* Color de fondo para las celdas de encabezado */
+    font-weight: bold;
+    /* Negrita para el texto de encabezado */
+}
+
+.title {
+    text-align: center;
+    /* Centra el título horizontalmente */
+    margin-top: 30px;
+    /* Margen superior */
+    font-size: 2.5em;
+    /* Tamaño de fuente */
+    font-weight: bold;
+    /* Negrita */
+    color: #333;
+    /* Color del texto */
+}
+
+.registro {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.registro label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.registro input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.registro input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.registro button[type="button"]:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default"># de compra</span>
+        <input type="number" class="validate" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <select id="producto" class="validate" aria-label="Default select example">
+            <option selected>Producto</option>
+            <option value="Ron">Ron</option>
+            <option value="Aguardiante">Aguardiante</option>
+            <option value="Vodka">Vodka</option>
+          </select>
+        <br>
+        <select id="proveedor" class="validate" aria-label="Default select example">
+            <option selected>Proveedor</option>
+            <option value="Diageo">Diageo</option>
+            <option value="FLA">FLA</option>
+            <option value="Colanta">Colanta</option>
+          </select>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+        <input type="number" id="precio" class="validate" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <br>
+        <span class="input-group-text" id="inputGroup-sizing-default">Cantidad</span>
+        <input type="number" id="cantidad" class="validate" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <br>
+        <span class="input-group-text" id="inputGroup-sizing-default">Iva</span>
+        <input type="number" id="iva" class="validate" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div>
+        <button type="button" class="btn btn-success" id="actualizar">Actualizar</button>
+    </div>
+
+    <script src="js/funciones.js"></script>
+</body>
+</html>
