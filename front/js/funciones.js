@@ -1,5 +1,5 @@
 
-const url = 'http://localhost:8088/api/compra'
+const url = 'https://proyecto-formativo-2559218-backend.onrender.com/api/compra'
 
 const listarCompras = async () => {
     let body = document.getElementById('contenido')
