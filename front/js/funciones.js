@@ -52,6 +52,10 @@ const registrarCompra = async () => {
             iva: iva
         }
 
+        const expresionCantidad = /^\d+$/
+        const expresionPrecio = /^\d+(\.\d{1,2})?$/
+        const expresionIva = /^\d+(\.\d{1,2})?$/
+
         if(
             numeroCompra == "" ||
             producto == "" ||
@@ -67,6 +71,30 @@ const registrarCompra = async () => {
             return;
         }
 
+        if(!expresionCantidad.test(cantidad)){
+            Swal.fire({
+                icon: "error",
+                title: "Cantidad inválida"
+            })
+            return
+        }
+
+        if(!expresionPrecio.test(precio)){
+            Swal.fire({
+                icon: "error",
+                title: "Precio inválido"
+            })
+            return
+        }
+
+        if(!expresionIva.test(iva)){
+            Swal.fire({
+                icon: "error",
+                title: "Iva inválido"
+            })
+            return
+        }
+
         fetch(url, {
             method: 'POST',
             mode: 'cors',
@@ -74,8 +102,17 @@ const registrarCompra = async () => {
             headers: { "Content-type": "application/json; charset=UTF-8" }
         })
 
-        const json = await response.json()
-        alert(json.mensaje)
+        .then(response => response.json()) 
+        .then(json => {
+           Swal.fire({
+            icon: "error",
+            title: "Registrado exitosamente"
+           }).then(result => {
+                if(result.isConfirmed){
+                    window.location.reload()
+                }
+           })
+        })
 
         window.location.href = '/valisoft/consumirAPI/listarCompras.html'
 
@@ -121,6 +158,49 @@ const actualizarCompra = async () => {
         iva: iva
     }
 
+    const expresionCantidad = /^\d+$/
+    const expresionPrecio = /^\d+(\.\d{1,2})?$/
+    const expresionIva = /^\d+(\.\d{1,2})?$/
+
+        if(
+            numeroCompra == "" ||
+            producto == "" ||
+            proveedor == "" ||
+            cantidad == "" ||
+            precio == "" ||
+            iva == "" 
+        ){
+            Swal.fire({
+                icon: "error",
+                title: "No se admiten campos vacíos"
+            })
+            return;
+        }
+
+        if(!expresionCantidad.test(cantidad)){
+            Swal.fire({
+                icon: "error",
+                title: "Cantidad inválida"
+            })
+            return
+        }
+
+        if(!expresionPrecio.test(precio)){
+            Swal.fire({
+                icon: "error",
+                title: "Precio inválido"
+            })
+            return
+        }
+
+        if(!expresionIva.test(iva)){
+            Swal.fire({
+                icon: "error",
+                title: "Iva inválido"
+            })
+            return
+        }
+
     fetch(url, {
         method: 'PUT',
         mode: 'cors',
@@ -161,7 +241,7 @@ const eliminar = (_id) => {
                         title: "Eliminación exitosa"
                     }).then(result =>{
                         if(result.isConfirmed){
-                            window.location.reload
+                            window.location.reload()
                         }
                     })
                 })
