@@ -52,6 +52,21 @@ const registrarCompra = async () => {
             iva: iva
         }
 
+        if(
+            numeroCompra == "" ||
+            producto == "" ||
+            proveedor == "" ||
+            cantidad == "" ||
+            precio == "" ||
+            iva == "" 
+        ){
+            Swal.fire({
+                icon: "error",
+                title: "No se admiten campos vacíos"
+            })
+            return;
+        }
+
         fetch(url, {
             method: 'POST',
             mode: 'cors',
@@ -121,23 +136,38 @@ const actualizarCompra = async () => {
 }
 
 const eliminar = (_id) => {
-    if (confirm('¿Está seguro de eliminar la compra?') == true) {
-        let compra = {
-            _id: _id
-        }
+    Swal.fire({
+        title: "¿Está seguro de eliminar la compra?",
+        showCancelButtonText: true,
+        confirmButtonText: "Si",
+    }).then((result) => {
 
-        fetch(url, {
-            method: 'DELETE',
-            mode: 'cors',
-            body: JSON.stringify(compra),
-            headers: { "Content-type": "application/json; charset=UTF-8" }
-        })
-
-            .then(response => response.json())
-            .then(json => {
-                alert(json.mensaje)
+        if (result.isConfirmed) {
+            let compra = {
+                _id: _id
+            }
+    
+            fetch(url, {
+                method: 'DELETE',
+                mode: 'cors',
+                body: JSON.stringify(compra),
+                headers: { "Content-type": "application/json; charset=UTF-8" }
             })
-    }
+    
+                .then(response => response.json())
+                .then(json => {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Eliminación exitosa"
+                    }).then(result =>{
+                        if(result.isConfirmed){
+                            window.location.reload
+                        }
+                    })
+                })
+        }
+    })
+    
 
 }
 
