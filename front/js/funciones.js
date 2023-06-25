@@ -114,7 +114,7 @@ const registrarCompra = async () => {
            })
         })
 
-        window.location.href = '/valisoft/consumirAPI/listarCompras.html'
+        window.location.href = '/listarCompras.html'
 
     }catch(error){
         console.log(error)
