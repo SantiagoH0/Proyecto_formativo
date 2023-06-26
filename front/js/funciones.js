@@ -204,8 +204,8 @@ const actualizarCompra = async () => {
 const eliminar = (_id) => {
     Swal.fire({
         title: "¿Está seguro de eliminar la compra?",
-        showCancelButtonText: true,
-        showConfirmButtonText: true,
+        showCancelButton: true,
+        showConfirmButton: true,
         confirmButtonText: "Si",
         cancelButtonText: 'No'
     }).then((result) => {
