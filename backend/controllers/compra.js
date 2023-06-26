@@ -18,22 +18,22 @@ const getCompra = async(req, res = response) => { //Consulta
 }
 
 const postCompra = async (req, res = response) => {
+    const body = req.body;
+    let mensaje = '';
+
+    const compra = new Compra(body);
+    console.log(body);
     try {
-        const body = req.body;
-        let mensaje = '';
-
-        const compra = new Compra(body);
-
-        console.log(body);
-
         await compra.save();
         mensaje = 'Compra registrada exitosamente';
-
-        res.json({ mensaje });
+        
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Ocurrió un error al guardar la compra' });
+        mensaje = error
     }
+
+    res.json({
+        mensaje
+    })
 };
 
 const putCompra = async(req, res = response) =>{
