@@ -106,8 +106,6 @@ const registrarCompra = async () => {
            alert(json.mensaje)
            })
         })
-
-        window.location.href = '/listarCompras.html'
 }
 
 const editar = (compra) => {
