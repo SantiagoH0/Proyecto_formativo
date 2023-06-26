@@ -104,7 +104,6 @@ const registrarCompra = async () => {
         .then(response => response.json()) 
         .then(json => {
            alert(json.mensaje)
-           })
         })
 }
 
