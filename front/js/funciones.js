@@ -51,6 +51,7 @@ const registrarCompra = async () => {
             iva: iva
         }
 
+        const expresionNumero = /^\d+$/
         const expresionCantidad = /^\d+$/
         const expresionPrecio = /^\d+(\.\d{1,2})?$/
         const expresionIva = /^\d+(\.\d{1,2})?$/
@@ -87,6 +88,14 @@ const registrarCompra = async () => {
         }
 
         if(!expresionIva.test(iva)){
+            Swal.fire({
+                icon: "error",
+                title: "Iva inválido"
+            })
+            return
+        }
+
+                if(!expresionNumero.test(numeroCompra)){
             Swal.fire({
                 icon: "error",
                 title: "Iva inválido"
