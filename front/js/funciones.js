@@ -205,7 +205,9 @@ const eliminar = (_id) => {
     Swal.fire({
         title: "¿Está seguro de eliminar la compra?",
         showCancelButtonText: true,
+        showConfirmButtonText: true,
         confirmButtonText: "Si",
+        cancelButtonText: 'No'
     }).then((result) => {
 
         if (result.isConfirmed) {
