@@ -98,7 +98,7 @@ const registrarCompra = async () => {
                 if(!expresionNumero.test(numeroCompra)){
             Swal.fire({
                 icon: "error",
-                title: "Iva inválido"
+                title: "Número de compra inválido"
             })
             return
         }
