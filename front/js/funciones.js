@@ -35,7 +35,6 @@ const listarCompras = async () => {
 listarCompras()
 
 const registrarCompra = async () => {
-    try {
         let numeroCompra = document.getElementById('numeroCompra').value
         let producto = document.getElementById('producto').value
         let proveedor = document.getElementById('proveedor').value
@@ -104,21 +103,11 @@ const registrarCompra = async () => {
 
         .then(response => response.json()) 
         .then(json => {
-           Swal.fire({
-            icon: "error",
-            title: "Registrado exitosamente"
-           }).then(result => {
-                if(result.isConfirmed){
-                    window.location.reload()
-                }
+           alert(json.mensaje)
            })
         })
 
         window.location.href = '/listarCompras.html'
-
-    }catch(error){
-        console.log(error)
-    }
 }
 
 const editar = (compra) => {
